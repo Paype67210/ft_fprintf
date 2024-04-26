@@ -1,5 +1,11 @@
-# ft_fprintf
+# ft_printf : Reproduction de la fonction fprintf de la librairie stdio.h
 
-Reproduction de la fonction `fprintf` de la librairie `stdio.h` qui permet de rediriger la sortie de printf sur n'importe quel `File_Descriptor`.
-J'ai développé cette fonction pour pouvoir rediriger l'ensemble des messages de débugage et d'erreur de mon Minishell vers un fichier de log.
-Bien utile pour inscrire tout ce qui marche ou pas lors du développement, je l'ai intégrée à ma libft, à la suite de `ft_run_malloc` développée il y a peu.
+La fonction `ft_printf` reproduit la fonction `fprintf` de la librairie `stdio.h`, offrant ainsi la possibilité de rediriger la sortie de `printf` vers n'importe quel descripteur de fichier. Cette fonction a été développée dans le cadre de mon projet Minishell, où j'avais besoin de canaliser l'ensemble des messages de débogage et d'erreur vers un fichier de journalisation. Cette capacité s'est avérée extrêmement utile pour enregistrer les détails de l'exécution du programme, ce qui m'a permis d'analyser efficacement ce qui fonctionnait ou non lors du développement.
+
+En plus de reproduire fidèlement le comportement de `fprintf`, `ft_printf` offre également la possibilité d'étendre ses fonctionnalités grâce à des spécificateurs de format supplémentaires, permettant un contrôle plus précis sur la façon dont les données sont affichées.
+
+Le fonctionnement interne de `ft_printf` repose sur la manipulation de chaînes de caractères formatées et sur la gestion des arguments variables passés à la fonction. En parcourant la chaîne de format, chaque spécificateur est identifié, les arguments correspondants sont extraits et le formatage approprié est appliqué. Ce processus permet à `ft_printf` de gérer différents types de données, tels que les entiers, les chaînes de caractères, les caractères individuels, etc., avec une grande flexibilité.
+
+L'intégration de `ft_printf` à ma libft s'inscrit dans une démarche de centralisation des outils utiles au développement de projets en langage C. Cette fonctionnalité vient compléter mon travail précédent sur `ft_run_malloc`, qui permet de tracer et de gérer dynamiquement l'allocation de mémoire dans mes projets. En combinant ces deux outils, je dispose désormais d'un ensemble cohérent de fonctions personnalisées facilitant le développement, le débogage et la maintenance de mes programmes.
+
+Elle pourra encore être améliorée - par exemple - avec des spécificateurs tels que `%b` pour afficher un entier en binaire ou `%t` pour afficher un pointeur sous forme de chaîne hexadécimale pour répondre à des besoins spécifiques de formatage... Si quelqu'un a envie d'y participer...
